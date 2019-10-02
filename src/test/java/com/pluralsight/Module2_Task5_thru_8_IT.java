@@ -60,6 +60,9 @@ public class Module2_Task5_thru_8_IT extends Mockito {
          when(request.getParameter("index")).thenReturn("0");
          when(session.getAttribute("cart")).thenReturn(shoppingCart);
        } catch (MethodNotFoundException e) {}
+       catch (Exception e) {
+           System.out.println(e);
+       }
 
 	      try {
 	       cartController.doGet(request, response);
