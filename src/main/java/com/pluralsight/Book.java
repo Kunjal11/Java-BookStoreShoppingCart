@@ -48,4 +48,19 @@ public class Book {
 	public void setPrice(float price) {
 		this.price = price;
 	}
+
+	public boolean equals(Object object) {
+		if (this == object) return true;
+		if (object == null || getClass() != object.getClass()) return false;
+		if (!super.equals(object)) return false;
+		Book book = (Book) object;
+		return id == book.id &&
+				java.lang.Float.compare(book.price, price) == 0 &&
+				title.equals(book.title) &&
+				author.equals(book.author);
+	}
+
+	public int hashCode() {
+		return Objects.hash(super.hashCode(), id, title, author, price);
+	}
 }
