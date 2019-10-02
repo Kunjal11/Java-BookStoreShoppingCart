@@ -27,4 +27,17 @@ public class CartItem {
     public float getTotalCost() {
         return book.getPrice()*this.quantity;
     }
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        CartItem cartItem = (CartItem) object;
+        return quantity == cartItem.quantity &&
+                book.equals(cartItem.book);
+    }
+
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), book, quantity);
+    }
 }
