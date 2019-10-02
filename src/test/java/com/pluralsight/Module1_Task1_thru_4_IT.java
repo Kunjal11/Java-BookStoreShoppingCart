@@ -39,6 +39,9 @@ public class Module1_Task1_thru_4_IT {
 			try {
 					listForm = firstPage.getFormByName(CART_FORM_NAME);
 			} catch (ElementNotFoundException e) {}
+			catch (Exception e) {
+				System.out.println(e);
+			}
 
       HtmlInput quantityInput = (HtmlInput)listForm.getInputByName("quantity");
       quantityInput.setAttribute("value", "1");
